@@ -1,0 +1,33 @@
+.row {
+    background-color: #111;
+    color: #fff;
+
+}
+
+.posters {
+    margin-left: 20px;
+    display: flex;
+    padding: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.poster {
+    max-height: 250px;
+    margin-right: 10px;
+}
+.smposter{
+    max-height: 150px;
+    margin-right: 10px;
+}
+
+.posters::-webkit-scrollbar {
+    display: none;
+}
+
+.rowtitle {
+    margin-left: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 20px;
+}
