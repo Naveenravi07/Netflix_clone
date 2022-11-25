@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { Swiper } from 'swiper'
+import { Swiper,SwiperSlide } from 'swiper/react'
 import axios from 'axios'
 import { netflixoriginals, imageUrl } from '../../constants/constants'
 import './RowPost.css'
 import YouTube, { YouTubePlayer } from 'react-youtube'
+import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper";
 import config from '../../constants/config.json'
+import "swiper/css";
+import "swiper/css/scrollbar";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 function RowPosts(props) {
 
     const [moviestate, setmovies] = useState([])
@@ -42,16 +48,38 @@ function RowPosts(props) {
     return (
         <div className='row'>
             <h2 className='rowtitle'> {props.title}</h2>
-            <div className="posters">
+            <Swiper
+             slidesPerView={props.isSmall?6:4}
+             centeredSlides={false}
+             slidesPerGroupSkip={1}
+             grabCursor={true}
+             keyboard={{
+               enabled: true,
+             }}
+             breakpoints={{
+               769: {
+                 slidesPerView: props.isSmall?6:4,
+                 slidesPerGroup: 2,
+               },
+             }}
+             scrollbar={true}
+             pagination={{
+               clickable: true,
+             }}
+             modules={[Keyboard, Scrollbar, Navigation, Pagination]}     
+            className="posters mySwiper">
                 {
                     moviestate.map((obj, index) =>
-                        <img onClick={() => handleMovieClick(obj.id)}
+                  
+                           <SwiperSlide>
+                           <img onClick={() => handleMovieClick(obj.id)}
                             src={`${imageUrl + obj.backdrop_path}`}
                             key={index} alt="" className={props.isSmall ? 'smposter' : 'poster'} />
+                           </SwiperSlide> 
 
                     )
                 }
-            </div>
+            </Swiper>
             <div className='ytplayer'>
                 {url && <  YouTube opts={opts} videoId={url} />}
             </div>
