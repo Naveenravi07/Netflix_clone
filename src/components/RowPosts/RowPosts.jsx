@@ -18,7 +18,8 @@ function RowPosts(props) {
     let [url, setUrl] = useState('')
     useEffect(() => {
         axios.get(props.url).then((res) => {
-            const movies = res.data.results
+            const movies =  res.data.results.slice(0, -10);
+            console.log(res);
             setmovies(movies)
         })
         return () => {
@@ -61,6 +62,10 @@ function RowPosts(props) {
                  slidesPerView: props.isSmall?6:4,
                  slidesPerGroup: 2,
                },
+               200:{
+                slidesPerView: props.isSmall?2:1,
+                slidesPerGroup: 2,
+               }
              }}
              scrollbar={true}
              pagination={{

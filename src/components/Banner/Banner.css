@@ -1,13 +1,15 @@
 .banner {
     /* background: url("/public/images/moneyheist.jpg"); */
-    height: 400px;
-    background-repeat: no-repeat;
+    height: 75vh;
     width: 100%;
-    text-align: center;
-    margin: auto;
-    margin-top: 90px;
-    background-position: 50% 50%;
+    background-color: #222222e6;
+    background-position: top;
+    background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .container {
@@ -18,9 +20,12 @@
 .content {
     text-align: left;
     left: 30px;
-    padding-top: 150px;
     padding-left: 1rem;
     height: 190px;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding-bottom: 50px;
 }
 
 .bannerh1 {
