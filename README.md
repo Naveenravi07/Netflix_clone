@@ -3,6 +3,7 @@ Desktop View
 ![Screenshot 2022-11-25 142627](https://user-images.githubusercontent.com/93857690/203940488-37d48c01-c9c5-47d5-8d2b-6cc04ca30029.png)
 
 Tablet View
+
 ![image](https://user-images.githubusercontent.com/93857690/187469865-ea357ca3-cc9e-4b2f-b298-1970e5f18976.png)
 
 # Getting Started with Create React App
