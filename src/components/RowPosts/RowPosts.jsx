@@ -5,7 +5,7 @@ import { netflixoriginals, imageUrl } from '../../constants/constants'
 import './RowPost.css'
 import YouTube, { YouTubePlayer } from 'react-youtube'
 import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper";
-import config from '../../constants/config.json'
+import { api_key } from '../../constants/constants'
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
@@ -28,7 +28,7 @@ function RowPosts(props) {
 
     const handleMovieClick = (id) => {
         console.log(id);
-        axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${config.api_key}&language=en-US`).then((res) => {
+        axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}&language=en-US`).then((res) => {
             let vid = res.data.results[0]
             let key = vid.key
             console.log(key);

@@ -1,4 +1,5 @@
-let { api_key } = require('./config.json')
+console.log(process.env);
+ export let api_key=process.env.REACT_APP_API_KEY
 
 export const baseUrl = 'https://api.themoviedb.org/3';
 export const imageUrl = "https://image.tmdb.org/t/p/w500/"
